@@ -4,11 +4,11 @@ Later, as the following step, I connected this MQTT and Jablotron itself to Home
 
 
 ## Components
-Arduino Board with enough analog pins - I chose Arduino Mega to have 16 analog pins 
-Arduino Ethernet Shield 
-Ethernet cable 
-Power source for Arduino 
-Enough cabels to connect Arduino to Jablotron
+- Arduino Board with enough analog pins - I chose Arduino Mega to have 16 analog pins 
+- Arduino Ethernet Shield 
+- Ethernet cable 
+- Power source for Arduino 
+- Enough cabels to connect Arduino to Jablotron
 
 ## Prerequisities
 You already setup MQTT. If not, I can recommend setup described here https://www.baldengineer.com/mqtt-tutorial.html
