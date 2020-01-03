@@ -168,7 +168,7 @@ if (!client.connected()) {
   } 
 ```
 
-Reading values from analog pins
+Reading values from analog pins and publishing them to mqtt
 ```
     if (currentMillis - previousMillis >= interval) {
       previousMillis = currentMillis;
