@@ -1,21 +1,20 @@
 # Enabling Jablotron security sensors to MQTT
-Past year we bought house where was installed Jablotron JA-80 alarm system. As normal security system, it is wired in close box with no API. It is nice that they have App, web, but without API I was struggling to connect it to my Smart Home running with HomeKit and Homebridge.
-This enable me turning on/off heating based on open window, run alert during rain if window is open, turning on light with 10% brightness on stairs during night if someone is comming etc. using sensors which was already in place.
+The past year we bought a house where was installed Jablotron JA-80 alarm system. As a standard security system, it is wired in a closed box with no API. It is nice that they have App, web, but without API, I was struggling to connect it to my Smart Home running with HomeKit and Homebridge. This enables me turning on/off heating based on an open window, run alert during rain if a window is open, turning on light with 10% brightness on stairs during the night if someone is coming etc. using sensors which were already in place.
+Later, as the following step, I connected this MQTT and Jablotron itself to Homebridge - read lower is nice to have.
 
-Later, as a following step I was connect this MQTT and Jablotron itself to Homebridge - read lower is nice to have.
 
 ## Components
-Arduino Board with enough analog pins - I chose Arduino Mega to have 16 analog pins
-Arduino Ethernet Shield
-Ethernet cable
-Power source for Arduino
-Enough wires to connect Arduino to Jablotron
+Arduino Board with enough analog pins - I chose Arduino Mega to have 16 analog pins 
+Arduino Ethernet Shield 
+Ethernet cable 
+Power source for Arduino 
+Enough cabels to connect Arduino to Jablotron
 
 ## Prerequisities
 You already setup MQTT. If not, I can recommend setup described here https://www.baldengineer.com/mqtt-tutorial.html
 
 ## Code
-First, include the library in your sketch along with wires, mqtt and ethernet
+First, include the library in your sketch along with cabels, mqtt and ethernet
 ```
 #include <SPI.h>
 #include <Ethernet.h>
@@ -212,18 +211,18 @@ Reading values from analog pins and publishing them to mqtt
 ## Wiring 
 Wiring itself will take a while, be patience and prepare some coffee.
 
-1. To start wiring, put your Jablotron to the Service mode - \* 0 \<YOUR PIN\>
+1. To start cabeling, put your Jablotron to the Service mode - \* 0 \<YOUR PIN\>
 2. It is recommended to turn off Jablotron before wiring
-3. Connect wires to Jablotron Pins to Arduino Mega and Arduino Ethernet Shield- keep there current wire and add there one you want to connect to Arduino. In my case 1-16 and GND
+3. Connect wires to Jablotron Pins to Arduino Mega and Arduino Ethernet Shield - keep there current cables and add there one you want to connect to Arduino. In my case 1-16 and GND
 4. Connect wires to Arduino Pins - idealy 0-15 and GND in the same order
 5. Plug in Arduino to electricity and ethernet
-5. Close box with Jablotron, turn electricity on and turn off Service mode with \#
+5. Close box with Jablotron, turn power on and turn off Service mode with \#
 
 ## Optional - connecting to Homebridge
 To be able to automatisation and operating rules and scenes at home I am using Homebridge. 
 - Just install Homebridge to some server or even Raspberry - https://homebridge.io
 - Connect Arduino to your Homebridge - I am using MQTT Thing - https://github.com/arachnetech/homebridge-mqttthing#readme
-- For connecting Alarm to your home, I am using also Homebridge with this plugin - https://github.com/F4stFr3ddy/homebridge-jablotron-alarm
+- For connecting Alarm to my home, I am using also Homebridge with this plugin - https://github.com/F4stFr3ddy/homebridge-jablotron-alarm
 
 ## TODO
 - [x] Window sensor
